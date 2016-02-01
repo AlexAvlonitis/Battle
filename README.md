@@ -1,4 +1,4 @@
-# battle
+# Battle
 ---------
 
 **The project is called 'Battle'. Here is a mockup of how it might look towards the end:**
