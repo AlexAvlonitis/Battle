@@ -1,9 +1,9 @@
 # battle
 ---------
 
-**The project is called 'Battle'. Here is a mockup of how it might look towards the end: **
+**The project is called 'Battle'. Here is a mockup of how it might look towards the end:**
 
-![Battle Final Mockup](./images/battle_final_mockup.png)
+![Battle Final Mockup](https://github.com/AlexAvlonitis/course/blob/master/intro_to_the_web/images/battle_final_mockup.png)
 
 In this challenge, you will set up a basic project structure with Sinatra, RSpec, and Capybara ready to go.
 
