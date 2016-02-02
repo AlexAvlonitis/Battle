@@ -25,6 +25,6 @@ feature 'Attack' do
     sign_in_and_play
     click_button("attack")
     visit("http://localhost:4567/play")
-    expect(find('progress')['value']).to eq('80')
+    expect(find('progress')['value']).to eq('90')
   end
 end

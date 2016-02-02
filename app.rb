@@ -26,7 +26,8 @@ class Battle < Sinatra::Application
   end
 
   get '/attack' do
-    @hp = $player2.attacked
+    game = Game.new
+    game.attack($player2)
     erb :attack
   end
 
