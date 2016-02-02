@@ -16,3 +16,11 @@ feature 'View Hit points' do
     expect(find('progress')['max']).to eq('100')
   end
 end
+
+feature 'Attack' do
+  scenario 'attacking player 2' do
+    visit('localhost:4567/play')
+    click_button("attack")
+    expect(page).to have_content("Player 2 is under attack")
+  end
+end
