@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-class Battle   < Sinatra::Application
+class Battle < Sinatra::Application
   enable :sessions
 
   get '/' do
