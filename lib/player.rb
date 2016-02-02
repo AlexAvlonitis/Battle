@@ -6,7 +6,7 @@ class Player
     @hp = 100
   end
 
-  def attacked
+  def reduce_hp
     @hp -= 10
   end
 

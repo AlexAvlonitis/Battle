@@ -8,11 +8,4 @@ describe Player do
     expect(player.name).to eq name
   end
 
-  describe '#attacked' do
-    it "reduces its HP by 10 when attacked" do
-      player.attacked
-      expect(player.hp).to eq 90
-    end
-  end
-
 end
