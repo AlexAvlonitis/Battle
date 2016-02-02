@@ -20,4 +20,11 @@ feature 'Attack' do
     click_button("attack")
     expect(page).to have_content("Player 2 is under attack")
   end
+
+  scenario 'reduce HP' do
+    sign_in_and_play
+    click_button("attack")
+    visit("http://localhost:4567/play")
+    expect(find('progress')['value']).to eq('80')
+  end
 end
