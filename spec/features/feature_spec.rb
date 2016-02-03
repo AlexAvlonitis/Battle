@@ -38,3 +38,15 @@ feature 'Switch turns' do
     expect(page).to have_content("Player 1 is under attack")
   end
 end
+
+feature 'Winning/losing' do
+  scenario 'P1 loses when reached 0HP' do
+    sign_in_and_play
+    19.times do
+      click_button("attack")
+      visit("http://localhost:4567/play")
+    end
+    click_button("attack")
+    expect(page).to have_content("Player 1 lost")
+  end
+end

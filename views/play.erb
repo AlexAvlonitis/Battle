@@ -2,10 +2,12 @@
 <p> <%= @player1 %> vs <%= @player2 %> </p>
 
 Player 1
-<progress id="p1" value="<%= @hp1 %>" max="100"> </progress>
+<%= @hp1 %>/100 HP
+<p><progress id="p1" value="<%= @hp1 %>" max="100"> </progress></p>
 
 Player 2
-<progress id="p2" value="<%= @hp2 %>" max="100"> </progress>
+<%= @hp2 %>/100 HP
+<p><progress id="p2" value="<%= @hp2 %>" max="100"> </progress></p>
 
 <form action="/attack" method="post">
   <input type="submit" value="attack">
