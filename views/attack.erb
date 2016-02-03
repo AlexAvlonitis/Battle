@@ -1,4 +1,4 @@
-<% if $game.player2.hp == 0 %>
+<% if $game.player1.hp <= 0 || $game.player2.hp  <= 0 %>
   <strong><%= @pname %></strong> lost
 <% else %>
   <strong><%= @pname %></strong> is under attack
