@@ -1,6 +1,6 @@
 <% if $game.player2.hp == 0 %>
-  <%= @pname %> lost
+  <strong><%= @pname %></strong> lost
 <% else %>
-  <%= @pname %> is under attack
+  <strong><%= @pname %></strong> is under attack
 <% end %>
 <a href="/play"><button> back </button>

@@ -31,10 +31,10 @@ class Battle < Sinatra::Application
   get '/attack' do
     if $game.p1
       $game.attack($game.player2)
-      @pname = "Player 2"
+      @pname = $game.player2.name
     else
       $game.attack($game.player1)
-      @pname = "Player 1"
+      @pname = $game.player1.name
     end
     erb :attack
   end
