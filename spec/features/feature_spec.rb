@@ -18,7 +18,7 @@ feature 'Attack' do
   scenario 'attacking player 2' do
     sign_in_and_play
     click_button("attack")
-    expect(page).to have_content("Player 2 is under attack")
+    expect(page).to have_content("Bob is under attack")
   end
 
   scenario 'reduce HP player 2' do
@@ -35,18 +35,18 @@ feature 'Switch turns' do
     click_button("attack")
     visit("http://localhost:4567/play")
     click_button("attack")
-    expect(page).to have_content("Player 1 is under attack")
+    expect(page).to have_content("Alex is under attack")
   end
 end
 
 feature 'Winning/losing' do
   scenario 'P1 loses when reached 0HP' do
     sign_in_and_play
-    19.times do
+    18.times do
       click_button("attack")
       visit("http://localhost:4567/play")
     end
     click_button("attack")
-    expect(page).to have_content("Player 1 lost")
+    expect(page).to have_content("Bob lost")
   end
 end
