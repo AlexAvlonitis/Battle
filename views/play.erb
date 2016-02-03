@@ -1,7 +1,11 @@
 <h3> Players </h3>
 <p> <%= @player1 %> vs <%= @player2 %> </p>
 
-<progress value="<%= @hp %>" max="100"> </progress>
+Player 1
+<progress id="p1" value="<%= @hp1 %>" max="100"> </progress>
+
+Player 2
+<progress id="p2" value="<%= @hp2 %>" max="100"> </progress>
 
 <form action="/attack" method="post">
   <input type="submit" value="attack">

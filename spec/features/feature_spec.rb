@@ -10,7 +10,7 @@ end
 feature 'View Hit points' do
   scenario 'viewing player hit points' do
     sign_in_and_play
-    expect(find('progress')['max']).to eq('100')
+    expect(find('progress#p2')['max']).to eq('100')
   end
 end
 
@@ -21,10 +21,20 @@ feature 'Attack' do
     expect(page).to have_content("Player 2 is under attack")
   end
 
-  scenario 'reduce HP' do
+  scenario 'reduce HP player 2' do
     sign_in_and_play
     click_button("attack")
     visit("http://localhost:4567/play")
-    expect(find('progress')['value']).to eq('90')
+    expect(find('progress#p2')['value']).to eq('90')
+  end
+end
+
+feature 'Switch turns' do
+  scenario 'attacking player 2 and then player 2 attacks p1' do
+    sign_in_and_play
+    click_button("attack")
+    visit("http://localhost:4567/play")
+    click_button("attack")
+    expect(page).to have_content("Player 1 is under attack")
   end
 end

@@ -17,7 +17,8 @@ class Battle < Sinatra::Application
   end
 
   get '/play' do
-    @hp = $game.player2.hp
+    @hp2 = $game.player2.hp
+    @hp1 = $game.player1.hp
     @player1 = $game.player1.name
     @player2 = $game.player2.name
     erb(:play)
@@ -28,7 +29,13 @@ class Battle < Sinatra::Application
   end
 
   get '/attack' do
-    $game.attack($game.player2)
+    if $game.p1
+      $game.attack($game.player2)
+      @pname = "Player 2"
+    else
+      $game.attack($game.player1)
+      @pname = "Player 1"
+    end
     erb :attack
   end
 
