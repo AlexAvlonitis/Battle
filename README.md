@@ -1,11 +1,8 @@
 # Battle
 ---------
 
-**The project is called 'Battle'. Here is a mockup of how it might look towards the end:**
+**A basic project structure with Sinatra, RSpec, and Capybara ready to go. It's a battle game where 2 users fight, reducing each others hit points:**
 
-![Battle Final Mockup](https://github.com/AlexAvlonitis/course/blob/master/intro_to_the_web/images/battle_final_mockup.png)
-
-In this challenge, you will set up a basic project structure with Sinatra, RSpec, and Capybara ready to go.
 
 ### Learning Objectives covered
 - Set up a web project with Testing frameworks
