@@ -9,6 +9,7 @@ describe Game do
     allow(player2).to receive(:paralyzed) {false}
     allow(player2).to receive(:healthy)
     allow(player2).to receive(:reduce_hp)
+    allow(player1).to receive(:poisoned).and_return(false)
   end
 
   describe '#attack' do

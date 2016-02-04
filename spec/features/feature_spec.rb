@@ -39,8 +39,8 @@ feature 'Switch turns' do
   end
 end
 
-feature 'Paralize' do
-  scenario 'when a user is paralized, there is a chance of losing his turn' do
+feature 'Paralyze' do
+  scenario 'when a user is paralyzed, there is a chance of losing his turn' do
     sign_in_and_play
     click_button("paralyze")
     visit("http://localhost:4567/play")
@@ -48,6 +48,17 @@ feature 'Paralize' do
     visit("http://localhost:4567/play")
     click_button("attack")
     expect(page).to have_content("Bob is under attack")
+  end
+end
+
+feature 'Poison' do
+  scenario 'when a user is poisoned, hp is reduced on his next attack' do
+    sign_in_and_play
+    click_button("poison")
+    visit("http://localhost:4567/play")
+    click_button("attack")
+    visit("http://localhost:4567/play")
+    expect(find('progress#p2')['value']).not_to eq 100
   end
 end
 

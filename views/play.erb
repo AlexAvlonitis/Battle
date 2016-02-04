@@ -3,10 +3,14 @@
 
 <strong><%= @player1.name %></strong>
 <%= @player1.hp %>/100 HP
+<p>Paralyzed: <%= @player1.paralyzed %></p>
+<p>Poisoned: <%= @player1.poisoned %></p>
 <p><progress id="p1" value="<%= @player1.hp %>" max="100"> </progress></p>
 
 <strong><%= @player2.name %></strong>
 <%= @player2.hp %>/100 HP
+<p>Paralyzed: <%= @player2.paralyzed %></p>
+<p>Poisoned: <%= @player2.poisoned %></p>
 <p><progress id="p2" value="<%= @player2.hp %>" max="100"> </progress></p>
 
 <% unless @player1.hp <= 0 || @player2.hp <= 0 %>
@@ -14,4 +18,5 @@
   <p><strong><%= @current_player.name %></strong> is getting attacked next.<p>
   <a href="/attack"><button>attack</button></a>
   <a href="/paralyze"><button>paralyze</button></a>
+  <a href="/poison"><button>poison</button></a>
 <% end %>

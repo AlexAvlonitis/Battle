@@ -40,5 +40,13 @@ class Battle < Sinatra::Application
     erb :paralyze
   end
 
+  get '/poison' do
+    @current_player = $game.cp
+    $game.poison
+    @player1 = $game.player1
+    @player2 = $game.player2
+    erb :poison
+  end
+
   run! if app_file == $0
 end

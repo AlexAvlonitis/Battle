@@ -1,10 +1,11 @@
 class Player
-  attr_reader :name, :hp, :paralyzed
+  attr_reader :name, :hp, :paralyzed, :poisoned
 
   def initialize(name)
     @name = name
     @hp = 100
     @paralyzed = false
+    @poisoned = false
   end
 
   def reduce_hp
@@ -17,6 +18,11 @@ class Player
 
   def healthy
     @paralyzed = false
+    @poisoned = false
+  end
+
+  def poison
+    @poisoned = true
   end
 
 end
