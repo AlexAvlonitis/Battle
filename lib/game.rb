@@ -11,11 +11,20 @@ class Game
     cp == player2 ? attacks(player2) : attacks(player1)
   end
 
+  def paralyze
+    cp == player2 ? paralyzes(player2) : paralyzes(player1)
+  end
+
   private
 
   def attacks(player)
     player.reduce_hp
-    switch_turns
+    switch_turns unless player.paralyzed == true
+    player.healthy
+  end
+
+  def paralyzes(player)
+    player.paralyze
   end
 
   def switch_turns

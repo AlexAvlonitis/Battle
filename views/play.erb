@@ -10,7 +10,6 @@
 <p><progress id="p2" value="<%= @player2.hp %>" max="100"> </progress></p>
 
 <% unless @player1.hp <= 0 || @player2.hp <= 0 %>
-  <form action="/attack" method="post">
-    <input type="submit" value="attack">
-  </form>
+  <a href="/attack"><button>attack</button></a>
+  <a href="/paralize"><button>paralize</button></a>
 <% end %>

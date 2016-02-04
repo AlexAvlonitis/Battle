@@ -39,6 +39,18 @@ feature 'Switch turns' do
   end
 end
 
+feature 'Paralize' do
+  scenario 'when a user is paralized, there is a chance of losing his turn' do
+    sign_in_and_play
+    click_button("attack")
+    visit("http://localhost:4567/play")
+    click_button("paralize")
+    visit("http://localhost:4567/play")
+    click_button("attack")
+    expect(page).to have_content("Bob is under attack")
+  end
+end
+
 # FEATURE TEST WHEN A USER LOSES
 # feature 'Winning/losing' do
 #   scenario 'P1 loses when reached 0HP' do
