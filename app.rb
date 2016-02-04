@@ -17,10 +17,8 @@ class Battle < Sinatra::Application
   end
 
   get '/play' do
-    @hp2 = $game.player2.hp
-    @hp1 = $game.player1.hp
-    @player1 = $game.player1.name
-    @player2 = $game.player2.name
+    @player1 = $game.player1
+    @player2 = $game.player2
     erb(:play)
   end
 

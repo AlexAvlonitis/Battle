@@ -1,15 +1,15 @@
 <h2> Players </h2>
-<h3> <%= @player1 %> vs <%= @player2 %> </h3>
+<h3> <%= @player1.name %> vs <%= @player2.name %> </h3>
 
-<strong><%= @player1 %></strong>
-<%= @hp1 %>/100 HP
-<p><progress id="p1" value="<%= @hp1 %>" max="100"> </progress></p>
+<strong><%= @player1.name %></strong>
+<%= @player1.hp %>/100 HP
+<p><progress id="p1" value="<%= @player1.hp %>" max="100"> </progress></p>
 
-<strong><%= @player2 %></strong>
-<%= @hp2 %>/100 HP
-<p><progress id="p2" value="<%= @hp2 %>" max="100"> </progress></p>
+<strong><%= @player2.name %></strong>
+<%= @player2.hp %>/100 HP
+<p><progress id="p2" value="<%= @player2.hp %>" max="100"> </progress></p>
 
-<% unless @hp1 <= 0 || @hp2 <= 0 %>
+<% unless @player1.hp <= 0 || @player2.hp <= 0 %>
   <form action="/attack" method="post">
     <input type="submit" value="attack">
   </form>
