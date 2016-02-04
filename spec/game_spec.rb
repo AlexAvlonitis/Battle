@@ -18,4 +18,18 @@ describe Game do
     end
   end
 
+  describe '#paralyze' do
+    it "sends paralyze to the player" do
+      expect(player2).to receive(:paralyze)
+      game.paralyze
+    end
+  end
+
+  describe '#poison' do
+    it "poisons the player" do
+      expect(player2).to receive(:poison)
+      game.poison
+    end
+  end
+
 end
