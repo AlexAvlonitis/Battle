@@ -18,6 +18,7 @@ class Battle < Sinatra::Application
   end
 
   get '/play' do
+    @current_player = $game.cp
     @player1 = $game.player1
     @player2 = $game.player2
     erb(:play)

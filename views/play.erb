@@ -10,6 +10,8 @@
 <p><progress id="p2" value="<%= @player2.hp %>" max="100"> </progress></p>
 
 <% unless @player1.hp <= 0 || @player2.hp <= 0 %>
+  <br/>
+  <p><strong><%= @current_player.name %></strong> is getting attacked next.<p>
   <a href="/attack"><button>attack</button></a>
-  <a href="/paralize"><button>paralize</button></a>
+  <a href="/paralyze"><button>paralyze</button></a>
 <% end %>

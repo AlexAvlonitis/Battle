@@ -42,9 +42,9 @@ end
 feature 'Paralize' do
   scenario 'when a user is paralized, there is a chance of losing his turn' do
     sign_in_and_play
-    click_button("attack")
+    click_button("paralyze")
     visit("http://localhost:4567/play")
-    click_button("paralize")
+    click_button("attack")
     visit("http://localhost:4567/play")
     click_button("attack")
     expect(page).to have_content("Bob is under attack")

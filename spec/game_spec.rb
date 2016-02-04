@@ -5,10 +5,15 @@ describe Game do
   let(:player2) {double :player2}
   let(:game) {described_class.new(player1, player2)}
 
+  before do
+    allow(player2).to receive(:paralyzed) {false}
+    allow(player2).to receive(:healthy)
+    allow(player2).to receive(:reduce_hp)
+  end
+
   describe '#attack' do
     it "attacks a player and returns the next player to play" do
-      allow(player2).to receive(:reduce_hp)
-      expect(game.attack).to eq player1
+      expect(game.attack).to eq nil
     end
   end
 

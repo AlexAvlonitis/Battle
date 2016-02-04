@@ -12,7 +12,7 @@ class Player
   end
 
   def paralyze
-    @paralyzed = true
+    @paralyzed = [true,false].sample
   end
 
   def healthy
