@@ -27,13 +27,10 @@ class Battle < Sinatra::Application
   end
 
   get '/attack' do
-    if $game.p1
-      $game.attack($game.player2)
-      @pname = $game.player2.name
-    else
-      $game.attack($game.player1)
-      @pname = $game.player1.name
-    end
+    @current_player = $game.cp
+    $game.attack
+    @player1 = $game.player1
+    @player2 = $game.player2
     erb :attack
   end
 

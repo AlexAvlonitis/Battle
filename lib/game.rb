@@ -1,21 +1,25 @@
 class Game
-  attr_reader :player1, :player2, :p1
+  attr_reader :player1, :player2, :cp
 
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @p1 = true
+    @cp = @player2
   end
 
-  def attack(player)
-    player.reduce_hp
-    switcher
+  def attack
+    cp == player2 ? attacks(player2) : attacks(player1)
   end
 
   private
 
-  def switcher
-    @p1 ? @p1 = false : @p1 = true
+  def attacks(player)
+    player.reduce_hp
+    switch_turns
+  end
+
+  def switch_turns
+    cp == player2 ? @cp = @player1 : @cp = @player2
   end
 
 end

@@ -1,6 +1,6 @@
-<% if $game.player1.hp <= 0 || $game.player2.hp  <= 0 %>
-  <strong><%= @pname %></strong> lost
+<% if @player1.hp <= 0 || @player2.hp  <= 0 %>
+  <strong><%= @current_player.name %></strong> lost
 <% else %>
-  <strong><%= @pname %></strong> is under attack
+  <strong><%= @current_player.name %></strong> is under attack
 <% end %>
-<a href="/play"><button> back </button>
+<a href="/play"><button>back</button></a>

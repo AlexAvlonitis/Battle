@@ -6,9 +6,9 @@ describe Game do
   let(:game) {described_class.new(player1, player2)}
 
   describe '#attack' do
-    it "sends the attacked method to player" do
-      expect(player1).to receive(:reduce_hp)
-      game.attack(player1)
+    it "attacks a player and returns the next player to play" do
+      allow(player2).to receive(:reduce_hp)
+      expect(game.attack).to eq player1
     end
   end
 
