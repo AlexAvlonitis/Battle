@@ -18,7 +18,7 @@ feature 'Attack' do
   scenario 'attacking player 2' do
     sign_in_and_play
     click_button("attack")
-    expect(page).to have_content("Bob is under attack")
+    expect(page).to have_content("Alex is attacking his opponent")
   end
 
   scenario 'reduce HP player 2' do
@@ -35,7 +35,7 @@ feature 'Switch turns' do
     click_button("attack")
     visit("http://localhost:4567/play")
     click_button("attack")
-    expect(page).to have_content("Alex is under attack")
+    expect(page).to have_content("Bob is attacking his opponent")
   end
 end
 
@@ -47,7 +47,19 @@ feature 'Paralyze' do
     click_button("attack")
     visit("http://localhost:4567/play")
     click_button("attack")
-    expect(page).to have_content("Bob is under attack")
+    expect(page).to have_content("Alex is attacking his opponent")
+  end
+end
+
+feature 'Sleep' do
+  scenario 'when a user is sleeping, he loses his turn' do
+    sign_in_and_play
+    click_button("sleep")
+    visit("http://localhost:4567/play")
+    click_button("attack")
+    visit("http://localhost:4567/play")
+    click_button("attack")
+    expect(page).to have_content("Alex is attacking his opponent")
   end
 end
 
@@ -59,6 +71,18 @@ feature 'Poison' do
     click_button("attack")
     visit("http://localhost:4567/play")
     expect(find('progress#p2')['value']).not_to eq 100
+  end
+end
+
+feature 'Heal' do
+  scenario 'when a user is healed, hp is increased' do
+    sign_in_and_play
+    4.times do
+      click_button("attack")
+      visit("http://localhost:4567/play")
+    end
+    click_button("heal")
+    expect(page).to have_content("Alex is healed")
   end
 end
 

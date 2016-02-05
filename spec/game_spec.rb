@@ -8,8 +8,10 @@ describe Game do
   before do
     allow(player2).to receive(:paralyzed) {false}
     allow(player2).to receive(:healthy)
+    allow(player1).to receive(:healthy)
     allow(player2).to receive(:reduce_hp)
-    allow(player1).to receive(:poisoned).and_return(false)
+    allow(player1).to receive(:poisoned) {false}
+    allow(player2).to receive(:sleeping) {false}
   end
 
   describe '#attack' do
@@ -29,6 +31,13 @@ describe Game do
     it "poisons the player" do
       expect(player2).to receive(:poison)
       game.poison
+    end
+  end
+
+  describe '#sleeper' do
+    it "sends the player to sleep" do
+      expect(player2).to receive(:sleeper)
+      game.sleeper
     end
   end
 

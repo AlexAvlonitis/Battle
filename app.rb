@@ -4,7 +4,7 @@ require_relative './lib/game'
 
 class Battle < Sinatra::Application
   enable :sessions
-  set :public_folder, 'static'
+  set :public, File.dirname(__FILE__) + '/static'
 
   get '/' do
     erb(:index)
@@ -46,6 +46,22 @@ class Battle < Sinatra::Application
     @player1 = $game.player1
     @player2 = $game.player2
     erb :poison
+  end
+
+  get '/sleep' do
+    @current_player = $game.cp
+    $game.sleeper
+    @player1 = $game.player1
+    @player2 = $game.player2
+    erb :sleep
+  end
+
+  get '/heal' do
+    @current_player = $game.cp
+    $game.heal
+    @player1 = $game.player1
+    @player2 = $game.player2
+    erb :heal
   end
 
   run! if app_file == $0
