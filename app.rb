@@ -4,7 +4,7 @@ require_relative './lib/game'
 
 class Battle < Sinatra::Application
   enable :sessions
-  set :public, File.dirname(__FILE__) + '/static'
+  set :public_folder, File.dirname(__FILE__) + '/static'
 
   get '/' do
     erb(:index)
