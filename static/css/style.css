@@ -16,6 +16,11 @@ body {
   padding: 40px;
 }
 
+#index h1 {
+  font-size: 30px;
+  text-shadow: 1px 1px white;
+}
+
 /*Form*/
 input[type=text] {
   width: 100%;
