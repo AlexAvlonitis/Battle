@@ -1,6 +1,5 @@
 # Battle
 ---------
-**Deployed on Heroku: https://battle-makers.herokuapp.com**
 
 **A basic project structure with Sinatra, RSpec, and Capybara ready to go. It's a battle game where 2 users fight, reducing each others hit points:**
 
